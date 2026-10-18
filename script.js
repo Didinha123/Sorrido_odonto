@@ -1,86 +1,71 @@
-// Sorrisu's Odonto — interações do site
-"use strict";
+(function () {
+  // Dados da clínica
+  const WHATSAPP = "5519938042991";
+  const MENSAGEM = "Olá! Gostaria de agendar uma consulta na Sorrisu's Odonto.";
 
-// MENU PARA CELULARES
-const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector("#main-nav");
+  // Horários por dia da semana (0 = domingo ... 6 = sábado). null = fechado.
+  const HORARIOS = {
+    0: null,
+    1: ["08:30", "18:30"],
+    2: ["08:30", "18:30"],
+    3: ["08:30", "18:30"],
+    4: ["08:30", "18:30"],
+    5: ["08:30", "18:30"],
+    6: null,
+  };
+  const DIAS = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
 
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  const toMin = (hhmm) => { const [h, m] = hhmm.split(":").map(Number); return h * 60 + m; };
+
+  // Links do WhatsApp
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAGEM)}`;
+  document.querySelectorAll(".js-whatsapp").forEach((a) => {
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener";
   });
 
-  mainNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mainNav.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Abrir menu");
-    });
-  });
-}
+  // Destaca o dia atual e mostra se está aberto
+  const agora = new Date();
+  const hoje = agora.getDay();
+  const row = document.querySelector(`#hoursTable tr[data-day="${hoje}"]`);
+  if (row) row.classList.add("today");
 
-// ANO ATUAL NO RODAPÉ
-const yearElement = document.querySelector("#year");
-if (yearElement) yearElement.textContent = new Date().getFullYear();
+  const status = document.getElementById("status");
+  const minutos = agora.getHours() * 60 + agora.getMinutes();
 
-// MÁSCARA DO TELEFONE
-const phoneInput = document.querySelector("#phone");
-
-if (phoneInput) {
-  phoneInput.addEventListener("input", (event) => {
-    const digits = event.target.value.replace(/\D/g, "").slice(0, 11);
-    let formatted = digits;
-
-    if (digits.length > 2 && digits.length <= 6) {
-      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-    } else if (digits.length > 6 && digits.length <= 10) {
-      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
-    } else if (digits.length > 10) {
-      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  function proximaAbertura() {
+    for (let i = 1; i <= 7; i++) {
+      const d = (hoje + i) % 7;
+      if (HORARIOS[d]) return `${i === 1 ? "amanhã" : DIAS[d]} às ${HORARIOS[d][0]}`;
     }
+    return "";
+  }
 
-    event.target.value = formatted;
+  const hj = HORARIOS[hoje];
+  if (hj && minutos >= toMin(hj[0]) && minutos < toMin(hj[1])) {
+    status.textContent = `Aberto agora · fecha às ${hj[1]}`;
+    status.classList.add("open");
+  } else {
+    const quando = hj && minutos < toMin(hj[0]) ? `hoje às ${hj[0]}` : proximaAbertura();
+    status.textContent = `Fechado agora · abre ${quando}`;
+    status.classList.add("closed");
+  }
+
+  // Menu mobile
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("nav");
+  toggle.addEventListener("click", () => {
+    const aberto = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", aberto);
   });
-}
+  nav.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    })
+  );
 
-// WHATSAPP DA CLÍNICA: Brasil (55) + DDD (19) + número informado.
-const WHATSAPP_NUMBER = "551938042991";
-
-// FORMULÁRIO DE CONTATO
-const contactForm = document.querySelector("#contact-form");
-const formFeedback = document.querySelector("#form-feedback");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!contactForm.reportValidity()) return;
-
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const phone = String(formData.get("phone") || "").trim();
-    const service = String(formData.get("service") || "").trim();
-
-    const message = [
-      "Olá! Gostaria de falar com a Sorrisu's Odonto.",
-      "",
-      `Nome: ${name}`,
-      `Meu WhatsApp: ${phone}`,
-      `Assunto: ${service}`,
-      "",
-      "Poderiam me orientar sobre os próximos passos?"
-    ].join("\n");
-
-    const whatsappUrl =
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
-    if (formFeedback) {
-      formFeedback.textContent =
-        "Sua mensagem foi preparada. Confira os dados e envie pelo WhatsApp.";
-    }
-  });
-}
+  // Ano no rodapé
+  document.getElementById("year").textContent = agora.getFullYear();
+})();
