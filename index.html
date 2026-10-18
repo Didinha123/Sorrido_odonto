@@ -3,106 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorrisu's Odonto | Clínica Odontológica em Mogi Mirim - SP</title>
-  <meta name="description" content="Sorrisu's Odonto - cuidado odontológico completo em Mogi Mirim - SP. Agende sua consulta pelo WhatsApp.">
+  <title>Sorrisu's Odonto | Dentista em Mogi Mirim - SP</title>
+  <meta name="description" content="Sorrisu's Odonto - clínica odontológica em Mogi Mirim - SP. Limpeza, clareamento, ortodontia, implantes e mais. Agende sua avaliação pelo WhatsApp.">
+  <meta name="theme-color" content="#0b3b4a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header" id="topo">
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span><svg class="i"><use href="#i-pin"/></svg> Rua Antônio Moreno Perez, 186 - Mogi Mirim/SP</span>
+      <span><svg class="i"><use href="#i-clock"/></svg> Seg a Sex · 08:30 às 18:30</span>
+    </div>
+  </div>
+
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#topo" class="logo">Sorrisu's <span>Odonto</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav">
+      <a href="#topo" class="logo" aria-label="Sorrisu's Odonto">
+        <span class="logo__mark"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span>
+        <span class="logo__text">Sorrisu's <b>Odonto</b></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
         <a href="#horarios">Horários</a>
+        <a href="#faq">Dúvidas</a>
         <a href="#contato">Contato</a>
-        <a href="#" class="btn btn--small js-whatsapp">Agendar</a>
+        <a href="#" class="btn btn--primary btn--sm js-whatsapp nav__cta">Agendar avaliação</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="topo">
+
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <div class="hero__text">
-          <span class="tag">Mogi Mirim - SP</span>
-          <h1>Seu sorriso merece <em>cuidado de verdade</em></h1>
-          <p>Tratamentos odontológicos com atendimento acolhedor, tecnologia e profissionais dedicados à saúde e à beleza do seu sorriso.</p>
+        <div class="hero__text reveal">
+          <span class="eyebrow"><span class="dot"></span> Odontologia em Mogi Mirim</span>
+          <h1>Um sorriso saudável, <span class="grad">feito com cuidado</span> e confiança.</h1>
+          <p class="lead">Da prevenção aos tratamentos estéticos, a Sorrisu's Odonto cuida de você e da sua família com atendimento acolhedor, ambiente moderno e total transparência.</p>
           <div class="hero__actions">
-            <a href="#" class="btn js-whatsapp">Agendar consulta</a>
-            <a href="#servicos" class="btn btn--outline">Conheça os serviços</a>
+            <a href="#" class="btn btn--primary btn--lg js-whatsapp"><svg class="i"><use href="#i-whats"/></svg> Agendar avaliação</a>
+            <a href="#servicos" class="btn btn--ghost btn--lg">Ver tratamentos</a>
           </div>
           <p class="status" id="status" aria-live="polite"></p>
         </div>
-        <div class="hero__art" aria-hidden="true">
-          <div class="tooth">&#128513;</div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="hero__card">
+            <svg class="hero__tooth" viewBox="0 0 24 24"><use href="#i-tooth"/></svg>
+            <div class="sparkle s1"></div><div class="sparkle s2"></div><div class="sparkle s3"></div>
+          </div>
+          <div class="float float--a"><span class="float__ic"><svg class="i"><use href="#i-shield"/></svg></span><div><b>Biossegurança</b><small>Protocolos rigorosos</small></div></div>
+          <div class="float float--b"><span class="float__ic"><svg class="i"><use href="#i-heart"/></svg></span><div><b>Atendimento humano</b><small>Do início ao fim</small></div></div>
         </div>
       </div>
     </section>
 
+    <!-- DESTAQUES -->
+    <section class="strip">
+      <div class="container strip__grid">
+        <div class="strip__item reveal"><svg class="i"><use href="#i-user"/></svg><div><b>Para toda a família</b><span>Crianças, adultos e idosos</span></div></div>
+        <div class="strip__item reveal"><svg class="i"><use href="#i-clipboard"/></svg><div><b>Plano personalizado</b><span>Orçamento claro e sem surpresas</span></div></div>
+        <div class="strip__item reveal"><svg class="i"><use href="#i-spark"/></svg><div><b>Tecnologia moderna</b><span>Conforto e precisão</span></div></div>
+        <div class="strip__item reveal"><svg class="i"><use href="#i-pin"/></svg><div><b>Fácil de chegar</b><span>No Jardim Maria Beatriz</span></div></div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
     <section class="section" id="sobre">
       <div class="container about">
-        <div>
-          <h2>Sobre a clínica</h2>
-          <p>A Sorrisu's Odonto nasceu para oferecer um atendimento humanizado, em um ambiente confortável e seguro. Cuidamos de você e da sua família, da prevenção aos tratamentos estéticos.</p>
+        <div class="about__visual reveal" aria-hidden="true">
+          <div class="about__frame">
+            <svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg>
+          </div>
+          <div class="about__badge"><b>+ Sorrisos</b><span>mais saúde e autoestima</span></div>
         </div>
-        <ul class="about__list">
-          <li><strong>Atendimento humanizado</strong> para todas as idades</li>
-          <li><strong>Planejamento personalizado</strong> para cada paciente</li>
-          <li><strong>Ambiente limpo e seguro</strong> com biossegurança rigorosa</li>
-        </ul>
+        <div class="about__text reveal">
+          <span class="kicker">Sobre nós</span>
+          <h2>Cuidar do seu sorriso é a nossa especialidade</h2>
+          <p>A Sorrisu's Odonto nasceu com um propósito simples: tornar o cuidado odontológico algo leve, acessível e de confiança. Aqui você é ouvido, entende cada etapa do tratamento e decide com segurança.</p>
+          <ul class="checks">
+            <li><svg class="i"><use href="#i-check"/></svg> Avaliação detalhada e diagnóstico claro</li>
+            <li><svg class="i"><use href="#i-check"/></svg> Tratamentos pensados para o seu objetivo</li>
+            <li><svg class="i"><use href="#i-check"/></svg> Ambiente limpo, confortável e seguro</li>
+            <li><svg class="i"><use href="#i-check"/></svg> Acompanhamento próximo após o procedimento</li>
+          </ul>
+          <a href="#" class="btn btn--dark js-whatsapp">Falar com a clínica</a>
+        </div>
       </div>
     </section>
 
-    <section class="section section--alt" id="servicos">
+    <!-- SERVIÇOS -->
+    <section class="section section--tint" id="servicos">
       <div class="container">
-        <h2 class="center">Nossos serviços</h2>
+        <header class="section__head reveal">
+          <span class="kicker">Tratamentos</span>
+          <h2>Tudo o que seu sorriso precisa, em um só lugar</h2>
+          <p>Cuidado completo, da rotina preventiva às transformações estéticas.</p>
+        </header>
         <div class="cards">
-          <article class="card"><div class="card__icon">&#129438;</div><h3>Limpeza e prevenção</h3><p>Profilaxia, aplicação de flúor e orientação de higiene bucal.</p></article>
-          <article class="card"><div class="card__icon">&#10024;</div><h3>Clareamento dental</h3><p>Sorriso mais branco e luminoso com segurança.</p></article>
-          <article class="card"><div class="card__icon">&#128300;</div><h3>Restaurações</h3><p>Tratamento de cáries com resultado natural e durável.</p></article>
-          <article class="card"><div class="card__icon">&#128737;</div><h3>Tratamento de canal</h3><p>Alívio da dor e preservação do seu dente.</p></article>
-          <article class="card"><div class="card__icon">&#128527;</div><h3>Ortodontia</h3><p>Aparelhos para alinhar o sorriso e corrigir a mordida.</p></article>
-          <article class="card"><div class="card__icon">&#128118;</div><h3>Odontopediatria</h3><p>Cuidado leve e acolhedor para os pequenos.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-spark"/></svg></span><h3>Limpeza e prevenção</h3><p>Profilaxia, remoção de tártaro, aplicação de flúor e orientação de higiene.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-sun"/></svg></span><h3>Clareamento dental</h3><p>Dentes mais brancos com técnicas seguras, respeitando a sensibilidade.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-tooth"/></svg></span><h3>Restaurações estéticas</h3><p>Correção de cáries, fraturas e desgastes com resultado natural.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-shield"/></svg></span><h3>Tratamento de canal</h3><p>Alívio da dor e preservação do dente, com conforto durante o procedimento.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-align"/></svg></span><h3>Ortodontia</h3><p>Aparelhos para alinhar o sorriso e corrigir a mordida, em qualquer idade.</p></article>
+          <article class="card reveal"><span class="card__ic"><svg class="i"><use href="#i-heart"/></svg></span><h3>Odontopediatria</h3><p>Um atendimento leve e lúdico para criar bons hábitos desde cedo.</p></article>
         </div>
       </div>
     </section>
 
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker">Passo a passo</span>
+          <h2>Como é o seu atendimento</h2>
+          <p>Simples, rápido e sem complicação.</p>
+        </header>
+        <ol class="steps">
+          <li class="step reveal"><span class="step__n">1</span><h3>Fale com a gente</h3><p>Chame no WhatsApp ou ligue e escolha o melhor dia e horário.</p></li>
+          <li class="step reveal"><span class="step__n">2</span><h3>Avaliação completa</h3><p>Analisamos sua saúde bucal e ouvimos o que você deseja.</p></li>
+          <li class="step reveal"><span class="step__n">3</span><h3>Plano de tratamento</h3><p>Você recebe o plano e o orçamento explicados com clareza.</p></li>
+          <li class="step reveal"><span class="step__n">4</span><h3>Sorriso renovado</h3><p>Realizamos o tratamento e acompanhamos o seu resultado.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <div>
+          <h2>Pronto para cuidar do seu sorriso?</h2>
+          <p>Agende sua avaliação e dê o primeiro passo para um sorriso mais saudável.</p>
+        </div>
+        <a href="#" class="btn btn--light btn--lg js-whatsapp"><svg class="i"><use href="#i-whats"/></svg> Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- HORÁRIOS -->
     <section class="section" id="horarios">
       <div class="container hours">
-        <div>
-          <h2>Horário de funcionamento</h2>
-          <p>Atendemos de segunda a sexta-feira. Agende com antecedência pelo WhatsApp.</p>
+        <div class="reveal">
+          <span class="kicker">Funcionamento</span>
+          <h2>Horário de atendimento</h2>
+          <p>Atendemos de segunda a sexta-feira, das 08:30 às 18:30. Recomendamos agendar com antecedência para garantir o melhor horário para você.</p>
+          <p class="status status--block" id="status2" aria-live="polite"></p>
         </div>
-        <table class="hours__table" id="hoursTable">
+        <table class="hours__table reveal" id="hoursTable">
+          <caption class="sr">Horários de funcionamento</caption>
           <tbody>
-            <tr data-day="1"><th>Segunda-feira</th><td>08:30 – 18:30</td></tr>
-            <tr data-day="2"><th>Terça-feira</th><td>08:30 – 18:30</td></tr>
-            <tr data-day="3"><th>Quarta-feira</th><td>08:30 – 18:30</td></tr>
-            <tr data-day="4"><th>Quinta-feira</th><td>08:30 – 18:30</td></tr>
-            <tr data-day="5"><th>Sexta-feira</th><td>08:30 – 18:30</td></tr>
-            <tr data-day="6"><th>Sábado</th><td class="closed">Fechado</td></tr>
-            <tr data-day="0"><th>Domingo</th><td class="closed">Fechado</td></tr>
+            <tr data-day="1"><th scope="row">Segunda-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="2"><th scope="row">Terça-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="3"><th scope="row">Quarta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="4"><th scope="row">Quinta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="5"><th scope="row">Sexta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="6"><th scope="row">Sábado</th><td class="closed">Fechado</td></tr>
+            <tr data-day="0"><th scope="row">Domingo</th><td class="closed">Fechado</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section class="section section--alt" id="contato">
-      <div class="container contact">
-        <div>
-          <h2>Fale conosco</h2>
-          <ul class="contact__list">
-            <li><strong>Endereço</strong><br>Rua Antônio Moreno Perez, 186 - Jardim Maria Beatriz<br>Mogi Mirim - SP, 13803-010</li>
-            <li><strong>Telefone / WhatsApp</strong><br><a href="tel:+5519938042991">(19) 3804-2991</a></li>
-          </ul>
-          <a href="#" class="btn js-whatsapp">Chamar no WhatsApp</a>
+    <!-- FAQ -->
+    <section class="section section--tint" id="faq">
+      <div class="container faq">
+        <header class="section__head reveal">
+          <span class="kicker">Dúvidas frequentes</span>
+          <h2>Perguntas que mais recebemos</h2>
+        </header>
+        <div class="faq__list">
+          <details class="reveal"><summary>Como faço para agendar uma consulta?</summary><p>É só chamar no WhatsApp ou ligar para (19) 3804-2991 em nosso horário de atendimento. Combinamos o melhor dia e horário para você.</p></details>
+          <details class="reveal"><summary>Atendem crianças?</summary><p>Sim. Cuidamos de toda a família, com um atendimento acolhedor e adaptado para os pequenos.</p></details>
+          <details class="reveal"><summary>A primeira consulta é uma avaliação?</summary><p>Sim. Na avaliação analisamos sua saúde bucal, ouvimos suas queixas e objetivos e montamos o plano de tratamento ideal.</p></details>
+          <details class="reveal"><summary>Onde fica a clínica?</summary><p>Rua Antônio Moreno Perez, 186 - Jardim Maria Beatriz, Mogi Mirim - SP, CEP 13803-010.</p></details>
         </div>
-        <div class="map">
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section" id="contato">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <span class="kicker">Contato</span>
+          <h2>Venha nos visitar</h2>
+          <ul class="contact__list">
+            <li><span class="card__ic"><svg class="i"><use href="#i-pin"/></svg></span><div><b>Endereço</b><span>Rua Antônio Moreno Perez, 186<br>Jardim Maria Beatriz, Mogi Mirim - SP<br>CEP 13803-010</span></div></li>
+            <li><span class="card__ic"><svg class="i"><use href="#i-phone"/></svg></span><div><b>Telefone / WhatsApp</b><a href="tel:+5519938042991">(19) 3804-2991</a></div></li>
+            <li><span class="card__ic"><svg class="i"><use href="#i-clock"/></svg></span><div><b>Atendimento</b><span>Segunda a sexta, 08:30 às 18:30</span></div></li>
+          </ul>
+          <div class="contact__actions">
+            <a href="#" class="btn btn--primary js-whatsapp"><svg class="i"><use href="#i-whats"/></svg> WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Ant%C3%B4nio+Moreno+Perez+186+Mogi+Mirim+SP" target="_blank" rel="noopener" class="btn btn--ghost">Como chegar</a>
+          </div>
+        </div>
+        <div class="map reveal">
           <iframe title="Mapa da Sorrisu's Odonto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=Rua+Ant%C3%B4nio+Moreno+Perez,+186,+Mogi+Mirim+-+SP,+13803-010&output=embed"></iframe>
         </div>
@@ -111,11 +217,48 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Sorrisu's Odonto. Todos os direitos reservados.</p>
-      <p class="footer__note">Site de demonstração para fins de estudo.</p>
+    <div class="container footer__grid">
+      <div>
+        <a href="#topo" class="logo logo--light"><span class="logo__mark"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span><span class="logo__text">Sorrisu's <b>Odonto</b></span></a>
+        <p class="footer__about">Cuidado odontológico com atendimento humano em Mogi Mirim - SP.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#horarios">Horários</a><a href="#contato">Contato</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <span>Rua Antônio Moreno Perez, 186</span>
+        <span>Jardim Maria Beatriz, Mogi Mirim - SP</span>
+        <a href="tel:+5519938042991">(19) 3804-2991</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>&copy; <span id="year"></span> Sorrisu's Odonto. Todos os direitos reservados.</span>
+      <span>Site de demonstração para fins de estudo.</span>
     </div>
   </footer>
+
+  <a href="#" class="wa-float js-whatsapp" aria-label="Falar no WhatsApp"><svg class="i"><use href="#i-whats"/></svg></a>
+
+  <!-- Ícones -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 2C5 2 3 4 3 6.8c0 1.7.6 3 1.2 4.4.6 1.5.8 3 1.2 5.2.3 2 .8 4.1 2 4.1 1.3 0 1.4-2.2 1.9-4 .3-1.2 1-2 2.7-2s2.4.8 2.7 2c.5 1.8.6 4 1.9 4 1.2 0 1.7-2.100 2-4.100.4-2.200.6-3.700 1.200-5.200.6-1.400 1.200-2.700 1.200-4.400C21 4 19 2 16.500 2c-1.800 0-2.800.8-4.500.8S9.300 2 7.500 2z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+      <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.200 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600-.4.400c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.4-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8.500 12l2.500 2.500 4.500-5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20s-8-4.800-8-10.500A4.500 4.500 0 0 1 12 7a4.500 4.500 0 0 1 8 2.500C20 15.200 12 20 12 20z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 21a8 8 0 0 1 16 0"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 4V3h6v1M9 11h6M9 15h4"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l1.900 5.100L19 10l-5.100 1.900L12 17l-1.900-5.100L5 10l5.100-1.900zM19 16l.8 2.200L22 19l-2.200.8L19 22l-.8-2.200L16 19l2.200-.8z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></symbol>
+      <symbol id="i-align" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 9h18M3 15h18M7 6v12M12 6v12M17 6v12"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".15"/><path fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" d="M7.500 12.500l3 3 6-7"/></symbol>
+    </defs>
+  </svg>
 
   <script src="script.js"></script>
 </body>
