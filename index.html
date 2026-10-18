@@ -3,192 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sorrisu's Odonto: cuidado odontológico humanizado para você sorrir com confiança. Conheça nossos tratamentos e agende sua avaliação.">
-  <meta name="theme-color" content="#0b6b67">
-  <title>Sorrisu's Odonto | Seu sorriso, nosso cuidado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Sorrisu's Odonto | Clínica Odontológica em Mogi Mirim - SP</title>
+  <meta name="description" content="Sorrisu's Odonto - cuidado odontológico completo em Mogi Mirim - SP. Agende sua consulta pelo WhatsApp.">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span><span class="topbar-dot"></span> Cuidando do seu sorriso com carinho</span>
-      <a href="#contato">Agende sua avaliação <span aria-hidden="true">↗</span></a>
-    </div>
-  </div>
 
-  <header class="header" id="inicio">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Sorrisu's Odonto - início">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" role="img"><path d="M24 5c-5.3-3.4-13.4-1.1-15 6.1-1.1 5 1.1 10.3 3.4 15.1 2.1 4.5 3.4 12.7 7.1 13.1 3.7.4 2.7-9.7 5.5-9.7s1.8 10.1 5.5 9.7c3.7-.4 5-8.6 7.1-13.1 2.3-4.8 4.5-10.1 3.4-15.1C39.6 3.9 31.3 1.6 26 5c-.7.5-1.3.8-2 .8S24.7 5.5 24 5Z" fill="currentColor"/><path d="M17 15c1.2-2.5 3.3-3.7 6-3.8" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.5"/></svg>
-        </span>
-        <span class="brand-name">Sorrisu's <small>ODONTO</small></span>
-      </a>
-
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a href="#topo" class="logo">Sorrisu's <span>Odonto</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="nav" id="main-nav" aria-label="Menu principal">
-        <a href="#sobre">A clínica</a>
-        <a href="#servicos">Tratamentos</a>
-        <a href="#diferenciais">Diferenciais</a>
+      <nav class="nav" id="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#horarios">Horários</a>
         <a href="#contato">Contato</a>
-        <a class="button button-small nav-cta" href="#contato">Agendar consulta <span aria-hidden="true">↗</span></a>
+        <a href="#" class="btn btn--small js-whatsapp">Agendar</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-shape shape-one"></div><div class="hero-shape shape-two"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow"><span class="eyebrow-line"></span> ODONTOLOGIA COM PROPÓSITO</span>
-          <h1>Seu sorriso merece <em>todo cuidado.</em></h1>
-          <p>Um atendimento acolhedor, tratamentos pensados para você e uma equipe pronta para cuidar da saúde do seu sorriso.</p>
-          <div class="hero-actions">
-            <a class="button" href="#contato">Agende sua avaliação <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#servicos">Conheça os tratamentos <span aria-hidden="true">↓</span></a>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="tag">Mogi Mirim - SP</span>
+          <h1>Seu sorriso merece <em>cuidado de verdade</em></h1>
+          <p>Tratamentos odontológicos com atendimento acolhedor, tecnologia e profissionais dedicados à saúde e à beleza do seu sorriso.</p>
+          <div class="hero__actions">
+            <a href="#" class="btn js-whatsapp">Agendar consulta</a>
+            <a href="#servicos" class="btn btn--outline">Conheça os serviços</a>
           </div>
-          <div class="hero-trust">
-            <div class="trust-icon" aria-hidden="true">✦</div>
-            <div><strong>Seu bem-estar em primeiro lugar</strong><span>Atendimento próximo, humano e individualizado.</span></div>
-          </div>
+          <p class="status" id="status" aria-live="polite"></p>
         </div>
-        <div class="hero-visual">
-          <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85" alt="Profissional de odontologia cuidando de uma paciente em consultório">
-          </div>
-          <div class="floating-card card-note">
-            <span class="floating-icon">♡</span>
-            <div><strong>Um sorriso saudável</strong><small>começa com cuidado</small></div>
-          </div>
-          <div class="floating-card card-seal"><span>+</span><small>Cuidado que<br>faz sorrir</small></div>
-          <div class="photo-caption"><span class="caption-dot"></span> Cuidado em cada detalhe</div>
-        </div>
-      </div>
-      <div class="container hero-bottom">
-        <span>SAÚDE BUCAL</span><i></i><span>ESTÉTICA DO SORRISO</span><i></i><span>BEM-ESTAR</span>
-      </div>
-    </section>
-
-    <section class="intro section" id="sobre">
-      <div class="container intro-grid">
-        <div class="intro-label">
-          <span class="eyebrow">OLÁ, SEJA BEM-VINDO(A)</span>
-          <div class="intro-stamp" aria-hidden="true"><span>Seu sorriso</span><b>☺</b><span>é único</span></div>
-        </div>
-        <div class="intro-content">
-          <h2>Mais do que cuidar dos dentes, queremos <em>cuidar de você.</em></h2>
-          <p>Na Sorrisu's Odonto, acreditamos que ir ao dentista pode ser uma experiência leve e tranquila. Nosso objetivo é ouvir você, entender suas necessidades e ajudar a manter seu sorriso saudável em todas as fases da vida.</p>
-          <a class="text-link" href="#contato">Vamos conversar? <span aria-hidden="true">↗</span></a>
+        <div class="hero__art" aria-hidden="true">
+          <div class="tooth">&#128513;</div>
         </div>
       </div>
     </section>
 
-    <section class="services section" id="servicos">
+    <section class="section" id="sobre">
+      <div class="container about">
+        <div>
+          <h2>Sobre a clínica</h2>
+          <p>A Sorrisu's Odonto nasceu para oferecer um atendimento humanizado, em um ambiente confortável e seguro. Cuidamos de você e da sua família, da prevenção aos tratamentos estéticos.</p>
+        </div>
+        <ul class="about__list">
+          <li><strong>Atendimento humanizado</strong> para todas as idades</li>
+          <li><strong>Planejamento personalizado</strong> para cada paciente</li>
+          <li><strong>Ambiente limpo e seguro</strong> com biossegurança rigorosa</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="servicos">
       <div class="container">
-        <div class="section-heading">
-          <div><span class="eyebrow"><span class="eyebrow-line"></span> COMO PODEMOS AJUDAR</span><h2>Cuidado completo para <em>seu sorriso.</em></h2></div>
-          <p>Encontre o cuidado que você precisa com orientação profissional e atenção aos detalhes.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7c-6-4-14-1-15 6-1 5 2 11 4 15 2 5 3 11 7 11s3-10 5-10 2 10 6 10 5-6 7-11c2-4 5-10 4-15-1-7-9-10-15-6-.8.5-1.4.8-2 .8S24.8 7.5 24 7Z"/><path d="M16 17c1-2 3-4 6-4"/></svg></div>
-            <span class="service-number">01</span><h3>Clínica geral</h3><p>Prevenção, avaliação e cuidados essenciais para manter sua saúde bucal em dia.</p><a href="#contato" aria-label="Saiba mais sobre clínica geral">Saiba mais <span>↗</span></a>
-          </article>
-          <article class="service-card featured">
-            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 18c4-6 9-8 16-8s12 2 16 8c-3 9-9 15-16 15S11 27 8 18Z"/><path d="M13 20c3 3 7 4 11 4s8-1 11-4M18 34c2 2 4 3 6 3s4-1 6-3"/></svg></div>
-            <span class="service-number">02</span><h3>Estética dental</h3><p>Opções para valorizar a beleza natural do seu sorriso com planejamento individualizado.</p><a href="#contato" aria-label="Saiba mais sobre estética dental">Saiba mais <span>↗</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6 39 13v10c0 9-6 15-15 19C15 38 9 32 9 23V13L24 6Z"/><path d="m17 24 5 5 10-11"/></svg></div>
-            <span class="service-number">03</span><h3>Prevenção</h3><p>Orientação e acompanhamento para ajudar a prevenir problemas e cuidar da sua saúde.</p><a href="#contato" aria-label="Saiba mais sobre prevenção">Saiba mais <span>↗</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4M12 8l-4 4M36 8l4 4"/></svg></div>
-            <span class="service-number">04</span><h3>Urgências</h3><p>Entre em contato para receber orientação sobre desconfortos e necessidades urgentes.</p><a href="#contato" aria-label="Saiba mais sobre urgências">Saiba mais <span>↗</span></a>
-          </article>
-        </div>
-        <p class="services-note">Os tratamentos indicados dependem de avaliação clínica individual.</p>
-      </div>
-    </section>
-
-    <section class="difference section" id="diferenciais">
-      <div class="container difference-grid">
-        <div class="difference-visual">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" alt="Ambiente moderno e acolhedor de uma clínica odontológica" loading="lazy">
-          <div class="difference-badge"><span>☺</span><strong>Você merece</strong><small>um cuidado especial</small></div>
-        </div>
-        <div class="difference-copy">
-          <span class="eyebrow"><span class="eyebrow-line"></span> NOSSO JEITO DE CUIDAR</span>
-          <h2>Um atendimento feito para você se sentir <em>bem.</em></h2>
-          <p class="difference-lead">Acreditamos que confiança e acolhimento fazem parte de todo bom tratamento.</p>
-          <div class="benefit-list">
-            <div class="benefit"><span class="benefit-check">✓</span><div><strong>Escuta de verdade</strong><p>Entendemos suas dúvidas e respeitamos suas necessidades.</p></div></div>
-            <div class="benefit"><span class="benefit-check">✓</span><div><strong>Plano individualizado</strong><p>Orientações claras para você decidir com segurança junto ao profissional.</p></div></div>
-            <div class="benefit"><span class="benefit-check">✓</span><div><strong>Ambiente acolhedor</strong><p>Uma experiência mais tranquila, do primeiro contato ao acompanhamento.</p></div></div>
-          </div>
-          <a class="button" href="#contato">Conheça a Sorrisu's <span aria-hidden="true">↗</span></a>
+        <h2 class="center">Nossos serviços</h2>
+        <div class="cards">
+          <article class="card"><div class="card__icon">&#129438;</div><h3>Limpeza e prevenção</h3><p>Profilaxia, aplicação de flúor e orientação de higiene bucal.</p></article>
+          <article class="card"><div class="card__icon">&#10024;</div><h3>Clareamento dental</h3><p>Sorriso mais branco e luminoso com segurança.</p></article>
+          <article class="card"><div class="card__icon">&#128300;</div><h3>Restaurações</h3><p>Tratamento de cáries com resultado natural e durável.</p></article>
+          <article class="card"><div class="card__icon">&#128737;</div><h3>Tratamento de canal</h3><p>Alívio da dor e preservação do seu dente.</p></article>
+          <article class="card"><div class="card__icon">&#128527;</div><h3>Ortodontia</h3><p>Aparelhos para alinhar o sorriso e corrigir a mordida.</p></article>
+          <article class="card"><div class="card__icon">&#128118;</div><h3>Odontopediatria</h3><p>Cuidado leve e acolhedor para os pequenos.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="quote-section">
-      <div class="container quote-inner">
-        <span class="quote-mark" aria-hidden="true">“</span>
-        <p>Um sorriso cuidado com carinho pode transformar a maneira como você se sente.</p>
-        <span class="quote-rule"></span><small>SORRISU'S ODONTO</small>
+    <section class="section" id="horarios">
+      <div class="container hours">
+        <div>
+          <h2>Horário de funcionamento</h2>
+          <p>Atendemos de segunda a sexta-feira. Agende com antecedência pelo WhatsApp.</p>
+        </div>
+        <table class="hours__table" id="hoursTable">
+          <tbody>
+            <tr data-day="1"><th>Segunda-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="2"><th>Terça-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="3"><th>Quarta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="4"><th>Quinta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="5"><th>Sexta-feira</th><td>08:30 – 18:30</td></tr>
+            <tr data-day="6"><th>Sábado</th><td class="closed">Fechado</td></tr>
+            <tr data-day="0"><th>Domingo</th><td class="closed">Fechado</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="contact section" id="contato">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <span class="eyebrow"><span class="eyebrow-line"></span> VAMOS COMEÇAR?</span>
-          <h2>Seu próximo sorriso começa <em>aqui.</em></h2>
-          <p>Fale com a nossa equipe e dê o primeiro passo para cuidar da sua saúde bucal.</p>
-          <div class="contact-details">
-            <div class="contact-detail"><span class="detail-icon">⌖</span><div><small>ENDEREÇO</small><strong>Adicione o endereço da clínica</strong></div></div>
-            <div class="contact-detail"><span class="detail-icon">◷</span><div><small>HORÁRIO DE ATENDIMENTO</small><strong>Informe os dias e horários</strong></div></div>
-            <div class="contact-detail"><span class="detail-icon">✆</span><div><small>TELEFONE / WHATSAPP</small><strong>(00) 00000-0000</strong></div></div>
-          </div>
+    <section class="section section--alt" id="contato">
+      <div class="container contact">
+        <div>
+          <h2>Fale conosco</h2>
+          <ul class="contact__list">
+            <li><strong>Endereço</strong><br>Rua Antônio Moreno Perez, 186 - Jardim Maria Beatriz<br>Mogi Mirim - SP, 13803-010</li>
+            <li><strong>Telefone / WhatsApp</strong><br><a href="tel:+5519938042991">(19) 3804-2991</a></li>
+          </ul>
+          <a href="#" class="btn js-whatsapp">Chamar no WhatsApp</a>
         </div>
-        <form class="contact-form" id="contact-form">
-          <h3>Agende uma conversa</h3>
-          <p>Preencha os campos e prepare sua mensagem para nossa equipe.</p>
-          <label for="name">Seu nome</label>
-          <input id="name" name="name" type="text" placeholder="Como podemos chamar você?" autocomplete="name" required>
-          <label for="phone">Seu WhatsApp</label>
-          <input id="phone" name="phone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
-          <label for="service">Como podemos ajudar?</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Selecione um assunto</option>
-            <option>Consulta / avaliação</option><option>Clínica geral</option><option>Estética dental</option><option>Prevenção</option><option>Urgência</option><option>Outro assunto</option>
-          </select>
-          <button class="button form-button" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button>
-          <p class="form-note">Ao continuar, você poderá revisar a mensagem antes de enviá-la pelo WhatsApp.</p>
-          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
-        </form>
+        <div class="map">
+          <iframe title="Mapa da Sorrisu's Odonto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Rua+Ant%C3%B4nio+Moreno+Perez,+186,+Mogi+Mirim+-+SP,+13803-010&output=embed"></iframe>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-main">
-      <a class="brand brand-footer" href="#inicio">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5c-5.3-3.4-13.4-1.1-15 6.1-1.1 5 1.1 10.3 3.4 15.1 2.1 4.5 3.4 12.7 7.1 13.1 3.7.4 2.7-9.7 5.5-9.7s1.8 10.1 5.5 9.7c3.7-.4 5-8.6 7.1-13.1 2.3-4.8 4.5-10.1 3.4-15.1C39.6 3.9 31.3 1.6 26 5c-.7.5-1.3.8-2 .8S24.7 5.5 24 5Z" fill="currentColor"/></svg></span>
-        <span class="brand-name">Sorrisu's <small>ODONTO</small></span>
-      </a>
-      <p>Seu sorriso, nosso cuidado.</p>
-      <a class="footer-top" href="#inicio">Voltar ao topo ↑</a>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Sorrisu's Odonto. Todos os direitos reservados.</p>
+      <p class="footer__note">Site de demonstração para fins de estudo.</p>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> Sorrisu's Odonto. Todos os direitos reservados.</span><span>Conteúdo informativo. Consulte um cirurgião-dentista.</span></div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
